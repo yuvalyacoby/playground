@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-export const loader = () => {
+const loader = () => {
     let exportedVersions = {};
     const files = fs.readdirSync('./versions');
     files.forEach(async file => {
@@ -12,3 +12,6 @@ export const loader = () => {
     return exportedVersions; 
 }
 
+const res = loader()
+
+export default res;
