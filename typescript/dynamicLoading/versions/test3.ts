@@ -1,0 +1,1 @@
+export const test3var = 'test3value';
