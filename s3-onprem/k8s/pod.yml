@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-pod
+spec:
+  template:
+    spec:
+      containers:
+      - name: your-app-container
+        image: yuvalyacoby133/test-js-app
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: seaweedfs-s3-secret
+              key: admin_access_key_id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: seaweedfs-s3-secret
+              key: admin_secret_access_key
+        - name: IS_ONPREM
+          value: "true"
+        - name: ONPREM_S3_ENDPOINT
+          value: "https://seaweedfs-filer.default.svc.cluster.local:8334"
+        - name: BUCKET_NAME
+          value: "test-bucket-2"
+        - name: KEY
+          value: "test123"
+        command: ["sleep", "999999"]
+        # command: ["node", "index.js"]
+        volumeMounts:
+          - name: root-cert
+            readOnly: true
+            mountPath: /tls/server/
+      restartPolicy: Never
+      volumes:
+        - name: root-cert
+          secret:
+            secretName: server-tls-secret
