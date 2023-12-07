@@ -11,4 +11,6 @@ for file in "$directory"/*; do
             echo "export * from './$fileNoExtension';" >> $outputFile
     fi    
 done
-echo "finished writing all versions to file"
+echo "finished writing all versions to file!"
+
+# comment
