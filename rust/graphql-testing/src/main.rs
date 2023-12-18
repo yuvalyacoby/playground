@@ -1,4 +1,4 @@
-use graphql_client::{GraphQLQuery, Response};
+use graphql_client::{GraphQLQuery, Response}; // comment
 use std::error::Error;
 use reqwest::{self, Client};
 
