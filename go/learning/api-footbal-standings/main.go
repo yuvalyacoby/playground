@@ -27,8 +27,10 @@ func main() {
 	resp, err := http.Get("https://api-football-standings.azharimm.dev/leagues")
 
 	if err != nil {
-		fmt.Println("Error:", err)
+		fmt.Println("Errors:", err)
 	}
+
+	fmt.Println("Test")
 
 	defer resp.Body.Close()
 
