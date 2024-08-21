@@ -31,7 +31,7 @@ fn main() {
         match tag {
             Ok(t) => {
                 println!(
-                    "name: {:?}\t",
+                    "name:  {:?}\t",
                     std::str::from_utf8(&content[t.name_range]).unwrap_or(""),
                     );
                     println!(
