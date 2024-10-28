@@ -7,6 +7,11 @@ setTimeout(() => res.sendStatus(404), 1);
   
 })
 
+app.post('/', (req, res) => {
+setTimeout(() => res.sendStatus(404), 1);
+  
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
