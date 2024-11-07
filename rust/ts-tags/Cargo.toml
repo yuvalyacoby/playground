@@ -1,0 +1,8 @@
+[package]
+name = "ts-tags"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tree-sitter-tags = "0.22.6"
+tree-sitter-javascript = "0.21.3"
